@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/apilivehq/api.live/security/advisories/new
+    about: Please report security problems privately, not as a public issue.
+  - name: Download the latest release
+    url: https://github.com/apilivehq/api.live/releases/latest
+    about: The app for macOS, Windows and Linux, the CLI and the demo workspace.

@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest something api.live should do
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: How it could work in the app or the CLI.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you use today instead (optional)
+      description: Another tool, a script, a workaround.
+  - type: dropdown
+    id: part
+    attributes:
+      label: Area
+      options:
+        - Requests / environments / secrets
+        - Flows / tests
+        - Simulator
+        - Load testing
+        - Monitors
+        - API design / review
+        - Import / export / docs site
+        - CLI
+        - MCP / agents
+        - Other

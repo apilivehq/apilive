@@ -1,0 +1,75 @@
+name: Bug report
+description: Something in the app or the `api` CLI does not work as expected
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Security problems: please do **not** file them here; see SECURITY.md.
+        Never paste secrets, tokens or private response bodies.
+  - type: input
+    id: version
+    attributes:
+      label: api.live version
+      description: "`api --version`, or in the app Help → Copy Diagnostics (paste it below)"
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: part
+    attributes:
+      label: Where
+      options:
+        - Desktop app
+        - "`api` CLI"
+        - MCP server (`api mcp`)
+        - Installation / first launch
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+    validations:
+      required: true
+  - type: input
+    id: os_version
+    attributes:
+      label: OS version, chip and package
+      description: "Which download you installed: .dmg, setup .exe, .msi, .deb, AppImage or a CLI archive."
+      placeholder: "macOS 14.6, Apple M1, .dmg · Windows 11 23H2, x64, setup .exe · Ubuntu 24.04, x64, .deb"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Error messages, CLI output, screenshots. Remove secrets first.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostics (optional)
+      description: Help → Copy Diagnostics in the app. It contains versions and counts, never values or secrets.
+      render: text

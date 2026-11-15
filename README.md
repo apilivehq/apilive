@@ -1,27 +1,67 @@
+<p align="center">
+  <img src=".github/assets/logo.png" width="104" height="104" alt="api.live logo">
+</p>
+
 <h1 align="center">api.live</h1>
-<p align="center"><b>The local-first API workbench with a built-in API simulator and a Rust load engine.</b><br>
-No account. No cloud. Zero telemetry. Your requests are plain YAML in your repo.</p>
+
+<p align="center">
+  <b>The local-first API workbench — a built-in API simulator and a Rust load engine.</b><br>
+  No account. No cloud. Zero telemetry. Your requests are plain YAML in your repo.
+</p>
+
+<p align="center">
+  <a href="https://github.com/apilivehq/apilive/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/apilivehq/apilive?sort=semver&color=7060ff&label=release"></a>
+  <a href="https://github.com/apilivehq/apilive/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/apilivehq/apilive/total?color=b44cff&label=downloads"></a>
+  <a href="LICENSE.md"><img alt="License" src="https://img.shields.io/badge/license-Free%20to%20use-ff5ca4"></a>
+  <img alt="Platforms" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-444">
+  <img alt="MCP" src="https://img.shields.io/badge/MCP-61%20tools-34d399">
+</p>
+
+<p align="center">
+  <a href="https://github.com/apilivehq/apilive/releases/latest/download/api.live_0.1.0_universal.dmg"><b>⬇&nbsp; Download for macOS</b></a>
+  &nbsp;·&nbsp;
+  <a href="#install-the-cli"><b>Install the CLI</b></a>
+  &nbsp;·&nbsp;
+  <a href="#use-it-as-an-mcp-server"><b>Use as MCP server</b></a>
+  &nbsp;·&nbsp;
+  <a href="https://api.live"><b>Website</b></a>
+</p>
+
+---
 
 This repository hosts the **downloads, release notes and issue tracker** for api.live. It contains no
 source code. api.live is free to use (see [LICENSE.md](LICENSE.md)).
 
-Website: https://api.live
-
 ## Download
 
-From the [latest release](https://github.com/apilivehq/api.live/releases/latest):
+Everything below comes from the **[latest release](https://github.com/apilivehq/apilive/releases/latest)**.
+The macOS app is signed with an Apple Developer ID and notarized by Apple — it opens with a normal
+double-click, no warning.
 
-| | File |
+### 🖥️ Desktop app
+
+| Platform | Download |
 |---|---|
-| macOS app (Apple silicon and Intel) | `api.live_<version>_universal.dmg` |
-| `api` CLI, Apple silicon | [`api-darwin-arm64.tar.gz`](https://github.com/apilivehq/api.live/releases/latest/download/api-darwin-arm64.tar.gz) |
-| `api` CLI, Intel | [`api-darwin-x64.tar.gz`](https://github.com/apilivehq/api.live/releases/latest/download/api-darwin-x64.tar.gz) |
-| Windows app (x64) | `api.live_<version>_x64-setup.exe` or `api.live_<version>_x64.msi` |
-| Linux app (x64) | `api.live_<version>_amd64.deb` or `api.live_<version>_amd64.AppImage` |
-| `api` CLI, Windows | [`api-windows-x64.zip`](https://github.com/apilivehq/api.live/releases/latest/download/api-windows-x64.zip) |
-| `api` CLI, Linux | [`api-linux-x64.tar.gz`](https://github.com/apilivehq/api.live/releases/latest/download/api-linux-x64.tar.gz) · [`api-linux-arm64.tar.gz`](https://github.com/apilivehq/api.live/releases/latest/download/api-linux-arm64.tar.gz) |
-| Demo workspace (Shop Checkout API) | [`demo-storefront.zip`](https://github.com/apilivehq/api.live/releases/latest/download/demo-storefront.zip) |
-| Checksums | `SHA256SUMS.txt` (and a `.sha256` next to every file) |
+| **macOS** · Apple silicon + Intel (universal) | [**⬇ `.dmg`**](https://github.com/apilivehq/apilive/releases/latest/download/api.live_0.1.0_universal.dmg) |
+| **Windows** · x64 | [`.exe` setup](https://github.com/apilivehq/apilive/releases/latest) · [`.msi`](https://github.com/apilivehq/apilive/releases/latest) |
+| **Linux** · x64 | [`.deb`](https://github.com/apilivehq/apilive/releases/latest) · [`.AppImage`](https://github.com/apilivehq/apilive/releases/latest) |
+
+### ⌨️ CLI (one `api` binary — includes the MCP server)
+
+| Platform | Download |
+|---|---|
+| macOS · Apple silicon | [**⬇ `api-darwin-arm64.tar.gz`**](https://github.com/apilivehq/apilive/releases/latest/download/api-darwin-arm64.tar.gz) |
+| macOS · Intel | [**⬇ `api-darwin-x64.tar.gz`**](https://github.com/apilivehq/apilive/releases/latest/download/api-darwin-x64.tar.gz) |
+| Windows · x64 | [**⬇ `api-windows-x64.zip`**](https://github.com/apilivehq/apilive/releases/latest/download/api-windows-x64.zip) |
+| Linux · x64 | [**⬇ `api-linux-x64.tar.gz`**](https://github.com/apilivehq/apilive/releases/latest/download/api-linux-x64.tar.gz) |
+| Linux · arm64 | [**⬇ `api-linux-arm64.tar.gz`**](https://github.com/apilivehq/apilive/releases/latest/download/api-linux-arm64.tar.gz) |
+
+### 📦 Extras
+
+| | Download |
+|---|---|
+| Demo workspace (Shop Checkout API) | [**⬇ `demo-storefront.zip`**](https://github.com/apilivehq/apilive/releases/latest/download/demo-storefront.zip) |
+| Checksums | [`SHA256SUMS.txt`](https://github.com/apilivehq/apilive/releases/latest/download/SHA256SUMS.txt) (and a `.sha256` next to every file) |
 
 Every file has a `.sha256` next to it, and `SHA256SUMS.txt` lists them all. Check a download
 before you run it:
@@ -31,21 +71,16 @@ before you run it:
 - Windows (PowerShell): `Get-FileHash .\api.live_<version>_x64-setup.exe` and compare the hash with
   the line in `SHA256SUMS.txt`
 
-The builds are not code-signed yet, so macOS and Windows ask once before the first launch (below).
+The **macOS app is signed and notarized by Apple**. The Windows installers are not code-signed yet,
+so Windows asks once before the first launch (below).
 
 ## Install the app
 
 ### macOS
 
 1. Open the `.dmg` and drag **api.live** to **Applications**.
-2. First launch: the app is not signed with an Apple Developer ID yet, so macOS blocks a plain
-   double-click ("api.live can't be opened" or "is damaged and can't be opened"). Either:
-   - in Finder, **right-click (or Control-click) api.live → Open**, then **Open** in the dialog
-     (on macOS 15 and later: try to open it once, then **System Settings → Privacy & Security →
-     Open Anyway**), or
-   - in Terminal: `xattr -dr com.apple.quarantine /Applications/api.live.app`
-
-   You only need to do this once.
+2. Double-click **api.live** to launch — that's it. The app is signed with an Apple Developer ID and
+   notarized by Apple, so macOS opens it without a warning.
 
 ### Windows
 
@@ -77,7 +112,7 @@ macOS:
 
 ```bash
 # Apple silicon (use api-darwin-x64.tar.gz on an Intel Mac)
-curl -fLO https://github.com/apilivehq/api.live/releases/latest/download/api-darwin-arm64.tar.gz
+curl -fLO https://github.com/apilivehq/apilive/releases/latest/download/api-darwin-arm64.tar.gz
 tar xzf api-darwin-arm64.tar.gz
 sudo mv api /usr/local/bin/
 api --version
@@ -90,7 +125,7 @@ Linux:
 
 ```bash
 # x64 (use api-linux-arm64.tar.gz on arm64)
-curl -fLO https://github.com/apilivehq/api.live/releases/latest/download/api-linux-x64.tar.gz
+curl -fLO https://github.com/apilivehq/apilive/releases/latest/download/api-linux-x64.tar.gz
 tar xzf api-linux-x64.tar.gz
 sudo mv api /usr/local/bin/
 api --version
@@ -99,7 +134,7 @@ api --version
 Windows (PowerShell):
 
 ```powershell
-curl.exe -fLO https://github.com/apilivehq/api.live/releases/latest/download/api-windows-x64.zip
+curl.exe -fLO https://github.com/apilivehq/apilive/releases/latest/download/api-windows-x64.zip
 Expand-Archive api-windows-x64.zip -DestinationPath "$env:LOCALAPPDATA\api.live-cli"
 # add that folder to your PATH (Settings → System → About → Advanced system settings →
 # Environment Variables), open a new terminal, then:
@@ -150,7 +185,7 @@ The demo workspace is a small checkout API: an OpenAPI spec, a simulator service
 saved requests and an end-to-end flow (log in → cart → order → refund).
 
 ```bash
-curl -fLO https://github.com/apilivehq/api.live/releases/latest/download/demo-storefront.zip
+curl -fLO https://github.com/apilivehq/apilive/releases/latest/download/demo-storefront.zip
 unzip demo-storefront.zip && cd checkout
 
 api mock --list          # the "Shop Checkout API" simulator service
@@ -177,7 +212,7 @@ endpoints in your codebase. `api --help` lists every command.
 
 ## Report a bug or ask for a feature
 
-[Open an issue](https://github.com/apilivehq/api.live/issues/new/choose). Security problems: please
+[Open an issue](https://github.com/apilivehq/apilive/issues/new/choose). Security problems: please
 do **not** open a public issue; see [SECURITY.md](SECURITY.md).
 
 ## Privacy

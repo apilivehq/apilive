@@ -2,13 +2,13 @@
 
 All notable changes to api.live. Versions follow [semantic versioning](https://semver.org/).
 
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-11-14
 
 The first public release: **macOS** (Apple silicon and Intel), **Windows** (setup .exe and .msi, x64) and
 **Linux** (.deb and AppImage, x64), plus the `api` CLI for all three.
 
-The download is not yet signed with an Apple Developer ID. On first launch, right-click the app →
-**Open** (or run `xattr -dr com.apple.quarantine /Applications/api.live.app`).
+The macOS app is signed with an Apple Developer ID and notarized by Apple, so it opens with a plain
+double-click. The Windows installers are not code-signed yet (SmartScreen asks once: More info → Run anyway).
 
 ### The desktop app
 
@@ -18,6 +18,9 @@ The download is not yet signed with an Apple Developer ID. On first launch, righ
   22 targets in 14 languages.
 - **Your files, in your repo.** One small YAML file per request under `.apilive/`, secrets in
   git-ignored files, and live reload when teammates pull.
+- **Format version on `.apilive` files.** Saved YAML files carry `format_version`; older and newer
+  files mix in one workspace, a newer file loads with a warning, and saves keep fields this build
+  doesn't understand.
 - **Environments as one table** (⌘E): variables × environments, an "All environments" column every
   environment inherits from, and per-variable secret toggles.
 - **Secrets from where they already live:** 1Password, HashiCorp Vault, AWS Secrets Manager, Azure
@@ -66,5 +69,6 @@ alert webhook you configure.
 
 ### Known limitations
 
-- Not signed or notarized yet (see above). On Windows, SmartScreen asks first: More info → Run anyway.
+- macOS is signed and notarized; the Windows installers are not code-signed yet (SmartScreen asks
+  first: More info → Run anyway).
 - Not yet on Homebrew, npm, PyPI or crates.io; download from the release page.
